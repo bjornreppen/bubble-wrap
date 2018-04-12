@@ -1,4 +1,4 @@
-Author: Geraldine Sarmiento, Nathaniel V. Kelso, Patricio Gonzalez Vivo, Brett Camper, Peter Richardson
+Author: Geraldine Sarmiento, Nathaniel V. Kelso, Patricio Gonzalez Vivo, Brett Camper, Peter Richardson, Bjørn Reppen
 
 import:
     - themes/bubble-wrap-icons.yaml
@@ -102,28 +102,11 @@ global:
             // if a ux_langauge has been defined use that, else if there is feature name in the fallback_ux_language then use that, else use the feature's default name in the local language
             return (global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature.name;
 
-            /*
-            var name = (global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature['name'];
-            if(feature.ref && name) {
-                return (feature.ref + ' ' + name);
-            } else {
-                return name;
-            }
-            */
         }
     ux_language_text_source_road_ref_and_name_short: |
         function() {
             // if a ux_langauge has been defined use that, else if there is feature name in the fallback_ux_language then use that, else use the feature's default name in the local language
             return (global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature.name;
-
-            /*
-            var name = (global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature['name'];
-            if (feature.ref && (feature.ref.length < 6) && name) {
-                return feature.ref + ' ' + name;
-            } else {
-                return name;
-            }
-            */
         }
     ux_language_text_source_piste_advanced: |
         function() {
@@ -221,7 +204,7 @@ global:
     text_fill: [0.300, 0.300, 0.300]         # BLACK
     text_fill2: '#555'                       # WHITE
     text_fill_road_e: '#555'                 # WHITE
-    text_fill_exits: [0.920,0.398,0.340]     # motorway junctions, highway_casing1
+    text_fill_exits: [0.55,0.55,0.55]     # motorway junctions, highway_casing1
     text_fill_building: '#ccc'               # WHITE
     text_fill_address: '#aaa'                # HUH
     text_fill_water: '#4c89b5'               # blue
@@ -229,29 +212,27 @@ global:
     text_fill_beach: [0.35,0.35,0.35]        # black
     text_fill_piste: '#444'                  # dark gray
     text_fill_piste_e: '#666'                # dark gray early
-    text_fill_shield: white                  # road shield fill color
     text_stroke: [0.870,0.870,0.870]         # land color
     text_stroke_water: [0.9, 0.9, 0.9]       # water stroke color
-    text_stroke_park: '#bddec5'              # park stroke color
+    text_stroke_park: '#ccc'              # park stroke color
     text_stroke_building: [0.83, 0.83, 0.83] # building stroke color
     text_stroke_address:  [0.85, 0.85, 0.85] # address stroke color
     text_stroke_road1: [0.9, 0.9, 0.9]       # road stroke color highway
     text_stroke_road2: [0.9, 0.9, 0.9]       # road stroke color major road
     text_stroke_road3: [0.9, 0.9, 0.9]       # road stroke color major road route
     text_stroke_road4: [0.9, 0.9, 0.9]       # road stroke color minor road
-    text_stroke_shield: '#D16768'            # road shield stroke color &highway_casing1
     townspot_sprite: townspot-m-rev          # depends on land color and text settings
-    text_font_family: 'Open Sans'            # branding in asperational Unicode, yo (or Helvetica)
+    text_font_family: 'Roboto'            # branding in asperational Unicode, yo (or Helvetica)
     #
     #roads
-    highway1: [0.988,0.495,0.439]
-    highway1_e: [0.988,0.495,0.439]
-    highway_link1: [1.000,0.631,0.590]
+    highway1: [0.6,0.6,0.6]
+    highway1_e: [0.5,0.5,0.5]
+    highway_link1: [0.7,0.7,0.7]
     highway_casing1: [0.859,0.859,0.859]
     highway_tunnel1: [0.800,0.800,0.800]
     highway_tunnel_casing1: [0.870,0.870,0.870]
-    highway_link_tunnel_casing1: [0.8, 0.8, 0.7]
-    ferry1: '#8bb5e4'
+    highway_link_tunnel_casing1: [0.8, 0.8, 0.8]
+    ferry1: '#b5b5b5'
     rail1: '#999'
     rail1_e: '#bbb'
     rail2: '#777'                           # less important rail (service, sidings)
@@ -266,11 +247,11 @@ global:
     major_road5: white
     major_casing1: [0.859,0.859,0.859]      # same as highway_casing1
     major_casing2: [0.859,0.859,0.859]      # zoomed out
-    major_tunnel1: [.870,0.870,0.870]       # light orange (major_route1)
+    major_tunnel1: [0.870,0.870,0.870]       # light orange (major_route1)
     major_tunnel_casing1: [0.780,0.780,0.780]
-    major_route1: [1.000,0.631,0.590]
-    major_route2: [1.000,0.752,0.730]       # zoomed out
-    minor_route: [1.000,0.631,0.590]        # same as major_route
+    major_route1: [0.631,0.631,0.631]
+    major_route2: [0.83,0.83,0.83]       # zoomed out
+    minor_route: [0.6,0.6,0.6]        # same as major_route
     minor_road1: [0.9,0.9,0.9]              # natural earth
     minor_road2: [0.9,0.9,0.9]              # natural earth, same as major_road2
     minor_road3: [0.9,0.9,0.9]
@@ -278,7 +259,7 @@ global:
     minor_road5: [0.9,0.9,0.9]              # zoomed out, again
     minor_casing1: white                    # same as highway_casing1
     minor_casing2: white                    # zoomed out
-    minor_tunnel1: [0.8, 0.8, 0.7]
+    minor_tunnel1: [0.8, 0.8, 0.8]
     minor_tunnel_casing1: white
     service_road1: white
     service_road2: white
@@ -291,25 +272,21 @@ global:
     path_bridge_casing2: [0.870,0.870,0.870] # zoomed out
     path_steps1: [0.91,0.91,0.91]
     path_steps1_b: '#f0ebeb'
-    piste_easy: [0.367,0.750,0.622]
-    piste_intermediate: [0.420,0.678,0.863]
-    piste_advanced: [0.450,0.450,0.450]
-    piste_expert: [0.450,0.450,0.450]
     #
     #boundaries
     country_boundary: [1.0,1.0,1.0]
     region_boundary: [0.96,0.96,0.96]
     subregion_boundary: '#bbb'
     city_wall: [0.682,0.682,0.682]
-    retaining_wall: [0.827,0.808,0.780]
-    snow_fence: [0.827,0.808,0.780]
-    fence: [0.827,0.808,0.780]
+    retaining_wall: [0.8,0.8,0.8]
+    snow_fence: [0.827,0.827,0.827]
+    fence: [0.808,0.808,0.808]
     #
     #landuse
-    water1: [0.83, 0.83, 0.83]              # water
+    water1: [0.83, 0.83, 0.183]              # water
     water2: [0.83, 0.83, 0.83]              # playa
-    water1_o: '#9dc3de'                     # water stroke
-    water2_o: '#9dc3de'                     # water stroke 2
+    water1_o: '#9dc30e'                     # water stroke
+    water2_o: '#9dc30e'                     # water stroke 2
     earth1: [0.870,0.870,0.870]             # land color, used to set scene background color
     earth1_r: '#666'                        # land color road
     earth2: '#e9e4e0'                       # urban
@@ -395,42 +372,6 @@ textures:
         url: images/building-grid.gif
         #url: https://raw.githubusercontent.com/tangrams/bubble-wrap/gh-pages/images/building-grid.gif
         filtering: mipmap
-
-fonts:
-    Open Sans:
-        - weight: 300 # Light
-          url: fonts/OpenSans-Light.woff
-        - weight: normal # Regular
-          url: fonts/OpenSans-Regular.woff
-        - weight: normal # Regular
-          style: italic
-          url: fonts/OpenSans-Italic.woff
-        - weight: 600 # Semi Bold
-          url: fonts/OpenSans-Semibold.woff
-        - weight: 600 # Semi Bold
-          style: italic
-          url: fonts/OpenSans-SemiboldItalic.woff
-        - weight: bold
-          url: fonts/OpenSans-Bold.woff
-    Montserrat:
-        - weight: normal
-          #url: https://fonts.gstatic.com/s/montserrat/v7/zhcz-_WihjSQC0oHJ9TCYL3hpw3pgy2gAi-Ip7WPMi0.woff
-          url: fonts/Montserrat-Regular.woff
-        - weight: 500
-          #url: https://fonts.gstatic.com/s/montserrat/v10/BYPM-GE291ZjIXBWrtCweqLy3K7m9xj_O5xwN3SdQNs.woff
-          url: fonts/Montserrat-Medium.woff
-        - weight: 700
-          #url: https://fonts.gstatic.com/s/montserrat/v10/IQHow_FEYlDC4Gzy_m8fcnbFhgvWbfSbdVg11QabG8w.woff
-          url: fonts/Montserrat-Bold.woff
-    Varela:
-        - weight: normal
-          #url: https://fonts.gstatic.com/s/varela/v7/maB5vWJo0EAVzvHPjBkLM-vvDin1pK8aKteLpeZ5c0A.woff
-          url: fonts/Varela-Regular.woff
-    Quicksand:
-        - weight: normal
-          #url: https://fonts.gstatic.com/s/quicksand/v6/sKd0EMYPAh5PYCRKSryvW7O3LdcAZYWl9Si6vvxL-qU.woff
-          url: fonts/Quicksand-Regular.woff
-
 sources:
     mapzen:
         type:  MVT #TopoJSON
@@ -574,8 +515,8 @@ styles:
         shaders:
             blocks:
                 filter: |
-                    color.rgb = vec3(0.899, 0.95, 1.0);
-                    color.rgb = mix(color.rgb, vec3(0.654,0.856,0.896), TileGrid());
+                    color.rgb = vec3(0.79, 0.79, 0.79);
+                    color.rgb = mix(color.rgb, vec3(0.7,0.7,0.7), TileGrid());
     water_border:
         base: lines
         texcoords: true
@@ -923,7 +864,7 @@ layers:
                         }
                     anchor: center
                     font:
-                        family: Montserrat
+                        family: global.text_font_family
                         fill: global.sdk_shield_text_color
                         style: bold
                         size: [[7,7px],[12,8px],[16,11px]]
@@ -1027,7 +968,6 @@ layers:
         draw:
             grid:
                 order: global.feature_order
-                #color: global.water1
         ocean:
             filter:
                 kind: ocean
@@ -1076,18 +1016,18 @@ layers:
                 line2:
                     style: lines
                     order: global.feature_order
-                    color: [[9,[0.396,0.833,0.920]],[10,[0.886,0.937,0.988]]]
+                    color: [[0.9, 0.9, 0.9, 1.00],[10,[0.9,0.9,0.9]]]
                     width: [[9,0.25px],[10,2px],[11,3px],[13,4px],[15,6px]]
                 lines:
                     order: 240
-                    color: [[1,[0.698,0.800,0.820]],[11,[0.631,0.773,0.800]],[14,[0.543,0.740,0.780]]]
+                    color: [[1,[0.78,0.78,0.78]],[11,[0.78,0.78,0.78]],[14,[0.78,0.78,0.78]]]
                     width: [[1,0.25px],[6,0.5px],[7,0.75px],[9,0.75px],[10,1px]]
         water-boundary-ocean-late:
             filter: { boundary: true, kind: ocean, $zoom: {min: 17} }
             draw:
                 water_border:
                     order: 240
-                    color: [[0,[0.886,0.937,0.988]]]
+                    color: [[0,[0.9,0.9,0.9]]]
                     width: 20px
         water_boundaries-not-ocean:
             filter: { boundary: true, not: { kind: ocean }, $zoom: { min: 8 } }
@@ -1095,11 +1035,11 @@ layers:
                 lines:
                     order: global.feature_order
                     # color: [[8,[0.635,0.737,0.753]],[13,[0.635,0.737,0.753]],[14,[0.569,0.722,0.749]],[15,[0.397,0.743,0.809]]]
-                    color: [[8,[0.749,0.831,0.867]],[12,[0.698,0.788,0.816]],[13,[0.698,0.784,0.812]],[14,[0.627,0.788,0.831]],[17,[0.643,0.824,0.851]]]
+                    color: [[8,[0.749,0.749,0.749]]]
                     width: [[8,0.5px],[10,0.5px],[11,0.5px],[12,0.75px],[13,1px],[14,1px],[15,1px],[16,1px],[17,1px]]
                     join: round
                     outline:
-                        color: [0.886,0.937,0.988]
+                        color: [0.937,0.937,0.937]
                         #width: [[9,0px],[10,1.5px],[11,1px],[12,1.5px],[13,1.6px],[14,2px],[15,2px],[16,3px],[18,4px]]
                         width: [[11,0px],[12,1.2px],[13,1.6px],[14,2px],[15,2px],[16,3px],[18,4px]]
             early:
@@ -1112,7 +1052,7 @@ layers:
                 filter: { kind: riverbank }
                 draw:
                     lines:
-                        color: [[8,[0.667,0.792,0.824]],[11,[0.698,0.808,0.835]],[13,[0.710,0.796,0.824]],[14,[0.522,0.792,0.855]]]
+                        color: [[8,[0.667,0.667,0.667]]]
                         width: [[9,0.5px],[10,0.75px],[11,0.75px],[12,0.8px],[13,1px],[14,1px],[15,1px],[16,1px],[17,1.5px]]
         river:
             #river center lines, not boundaries for polygons
@@ -1120,11 +1060,11 @@ layers:
             draw:
                 lines:
                     order: global.feature_order
-                    color: [[11,[0.753,0.820,0.835]],[12,[0.710,0.800,0.824]],[13,[0.886,0.937,0.988]]]
+                    color: [[11,[0.753,0.753,0.753]]]
                     width: [[8,0px],[10,0px],[11,0.75px],[12,1px],[13,1px],[14,2px],[15,3px],[16,4px],[17,5px]]
                     join: round
                     outline:
-                        color: [[11,[0.671,0.788,0.812]],[13,[0.710,0.800,0.824]],[14,[0.635,0.812,0.843]]]
+                        color: [[11,[0.788,0.788,0.788]]]
                         width: [[9,0px],[11,0px],[12,0px],[13,0.5px],[14,0.75px],[15,0.75px],[16,0.75px],[17,1px]]
 
         water-labels:
@@ -1141,7 +1081,7 @@ layers:
                     text-blend-order:
                         text_source: global.ux_language_text_source
                         font:
-                            fill: [0.314,0.591,0.640]
+                            fill: [0.55,0.55,0.55]
                             family: global.text_font_family
                             style: italic
                             weight: normal
@@ -1192,7 +1132,7 @@ layers:
                         text-blend-order:
                             text_source: global.ux_language_text_source
                             font:
-                                fill: [0.314,0.591,0.640] #global.text_fill_water
+                                fill: [0.4,0.4,0.4] #global.text_fill_water
                                 family: global.text_font_family
                                 style: italic
                                 weight: normal
@@ -1212,7 +1152,7 @@ layers:
                     text-blend-order:
                         text_source: global.ux_language_text_source
                         font:
-                            fill: [0.314,0.591,0.640] #global.text_fill_water
+                            fill: [0.59,0.59,0.59] #global.text_fill_water
                             family: global.text_font_family
                             weight: normal
                             size: 8px
@@ -1400,33 +1340,6 @@ layers:
                     text:
                         visible: false
 
-        natural_earth_highways:
-            filter: { source: 'naturalearthdata.com', $zoom: { max: 8 } }
-            draw:
-                lines:
-                    # Perf impact (too many vertices)
-                    #cap: round
-                    #join: round
-                    color: global.highway1
-                    width: [[5, 1px], [7, 1.4px], [9, 1.5px], [14, 3px], [16, 4px], [17, 10m]]
-            major_road:
-                filter: { kind: major_road }
-                draw:
-                    lines:
-                        color: [0.980,0.601,0.559]
-                        width: [[5, 0.45px], [6, 0.75px], [7, 1.0px], [8, 1px]]
-            minor_road:
-                filter: { kind: minor_road }
-                draw:
-                    lines:
-                        color: [[12, global.minor_road1], [17, global.minor_road2]]
-                        width: [[12, 1.0px], [14, 1.5px], [15, 3px], [16, 5m]]
-            ferry:
-                filter: { kind: ferry }
-                draw:
-                    lines:
-                        color: [0.702,0.843,0.933]
-                        width: 1px
         highway:
             filter: { kind: highway, $zoom: { min: 8 } }
             draw:
@@ -1434,7 +1347,7 @@ layers:
                     color: [[8, global.highway1], [14, global.highway1], [15, [1.0,1.0,1.0]], [17, [1.0,1.0,1.0]]]
                     width: [[8, 1px], [9, 1.25px], [11, 1.2px], [12, 1.3px], [13, 1.5px], [14, 2.25px], [15, 0.15px], [16, 5.5px], [17, 12m]]
                     outline:
-                        color: [[11, global.highway_casing1], [15,[0.988,0.495,0.439]], [17, [0.988,0.495,0.439]]]
+                        color: [[11, global.highway_casing1]]
                         width: [[11, 0], [12, 1px], [13, 1.33px], [15, 2px], [16, 2.25px], [17, 3px], [18, 3px]]
             early:
                 filter: { $zoom: { max: 15 } }
@@ -1451,7 +1364,7 @@ layers:
                         cap: butt
                         outline:
 #                            order: 355
-                            color: [[10, global.highway_casing1], [16, [0.988,0.495,0.439]], [17, [0.988,0.495,0.439]]]
+                            color: [[10, global.highway_casing1]]
                             width: [[14, 0px], [15, 0.85px], [17, 1.125px], [18, 1.5px]]
                 early:
                     filter: { $zoom: { max: 15 } }
@@ -1472,7 +1385,7 @@ layers:
                         # color: [[16, [0.843,0.843,0.843]]]
                         color: [[16, [0.85,0.85,0.85]]]
                         outline:
-                            color: [[13, [0.890,0.890,0.890]], [14, [0.870,0.870,0.870]], [16, [0.824,0.753,0.741]]]
+                            color: [[13, [0.890,0.890,0.890]]]
             highway_bridge:
                 filter: {is_bridge: true}
                 draw:
@@ -1556,7 +1469,7 @@ layers:
                         color: [1.0,1.0,1.0]
                         width: [[9, 0.5px], [10, 0.5px], [11, 1.0px], [12, 1.0px], [13, 1.5px], [14, 2.5px], [15, 5px], [16, 10m], [17, 10m]]
                         outline:
-                            color: [[13, [0.827,0.827,0.827]], [15, [1.000,0.739,0.710]]]
+                            color: [[13, [0.827,0.827,0.827]], [15, [0.7,0.7,0.7]]]
                             # todo: investigate width optimizations
                             width: [[14, 0px], [15, 1.75px], [16, 2px], [17, 3px]]
                 early:
@@ -1581,7 +1494,7 @@ layers:
                             # todo confirm widths
                             width: [[9, 1.0px], [10, 1.0px], [11, 1.2px], [12, 1.25px], [13, 1.5px], [14, 1.6px], [15, 0.15px], [16, 5.25px], [17, 12m]]
                             outline:
-                                color: [[13, [0.870,0.870,0.870]], [15, [0.976,0.612,0.573]]]
+                                color: [[13, [0.870,0.870,0.870]]]
                                 width: [[13, 0], [15, 2px], [16, 2px], [17, 3px]]
                     early:
                         filter: { $zoom: { max: 16 } }
@@ -1604,19 +1517,6 @@ layers:
                             text-blend-order:
                                 text_source: global.ux_language_text_source_road_ref_and_name
                                 visible: global.text_visible_trunk_primary_route
-                    # labels-trunk_primary-route-z13:
-                    #     filter:
-                    #         $zoom: { max: 14 }
-                    #         shield_text: false
-                    #     draw:
-                    #         text-blend-order:
-                    #             text_source: ref
-                    #             visible: global.text_visible_trunk_primary_route
-                    #             font:
-                    #                 fill: [1.0,1.0,1.0]
-                    #                 weight: 600
-                    #                 size: 11px
-                    #                 stroke: { color: [0.976,0.541,0.490], width: 2 }
                     labels-trunk_primary-route-z14:
                         filter: { $zoom: [14] }
                         draw:
@@ -1634,7 +1534,7 @@ layers:
                                 priority: 51
                                 #text_source: global.ux_language_text_source_road_ref_and_name
                                 font:
-                                    fill: [0.0,0.0,0.0]
+                                    fill: [0.5,0.5,0.5]
                                     weight: 600
                                     size: 14px
                                     stroke: { color: [0.95,0.95,0.95], width: 0.1px }
@@ -1746,7 +1646,7 @@ layers:
                     lines:
                         width: [[9, 0px], [10, 0.5px], [14, 2px], [16, 4m], [17, 5m], [18, 6m]]
                         outline:
-                            color: [[10, [0.827,0.827,0.827]], [13, [0.827,0.827,0.827]], [15, [1.000,0.739,0.710]]]
+                            color: [[10, [0.827,0.827,0.827]], [13, [0.827,0.827,0.827]]]
                             width: [[10, 0], [11, 1px], [14, 1px], [16, 1.5px], [17, 2px]]
             tunnel:
                 filter: {is_tunnel: true, $zoom: {min: 13} }
@@ -1762,7 +1662,7 @@ layers:
                         color: [1.0,1.0,1.0]
                         width: [[11, 0.65px], [12, 0.75px], [13, 1.25px], [14, 2px], [15, 5px], [16, 10m], [17, 10m]]
                         outline:
-                            color: [[15, [1.000,0.739,0.710]]]
+                            color: [[15, [0.6,0.6,0.6]]]
                             width: [[14, 0], [15, 1.75px], [16, 2px], [17, 3px]]
                 early:
                     filter: { $zoom: { max: 16 } }
@@ -1820,43 +1720,6 @@ layers:
                                     weight: 600
                                     size: 14px
                                     stroke: { color: global.text_stroke, width: 4px }
-                in_park:
-                    filter: { landuse_kind: [park,nature_reserve,conservation,golf_course,garden] }
-                    draw:
-                        lines:
-                            color: [1.0,1.0,1.0]
-                            outline:
-                                color: [[14, [0.800,0.851,0.847]], [15, [0.678,0.796,0.792]]]
-                                width: [[12, 0px], [13, 0.5px], [14, 1.0px], [15, 1.0px], [16, 1.5px], [18, 3.0px]]
-                    golf_course:
-                        filter: { landuse_kind: golf_course }
-                        draw:
-                            lines:
-                                outline:
-                                    color: [0.757,0.839,0.788]
-                    nature_reserve:
-                        filter: { landuse_kind: nature_reserve }
-                        draw:
-                            lines:
-                                outline:
-                                    color: [0.635,0.819,0.742]
-                    conservation:
-                        filter: { landuse_kind: conservation }
-                        draw:
-                            lines:
-                                outline:
-                                    color: orange
-                    zoo:
-                        filter: { landuse_kind: zoo }
-                        draw:
-                            lines:
-                                outline:
-                                    color: pink
-                labels-secondary-default:
-                    draw:
-                        text-blend-order:
-                            text_source: global.ux_language_text_source_road_ref_and_name_short
-                            # visible: global.text_visible_secondary
                 labels-secondary-z13:
                     filter:
                         $zoom: [13]
@@ -1963,39 +1826,6 @@ layers:
                             outline:
                                 color: [[12, global.major_casing2]]
                                 width: [[12, 0], [14, 1px], [16, 1.5px], [17, 2px]]
-                in_park:
-                    filter: { landuse_kind: [park,nature_reserve,conservation,golf_course,garden] }
-                    draw:
-                        lines:
-                            #width: [[11, 0.0px], [12, .5px], [14, 1.5px], [16, 2.0px], [19, 7m]]
-                            color: [[12, [0.9,0.9,0.9]], [13, [0.9,0.9,0.9]], [14, [0.98,0.98,0.98]]]
-                            outline:
-                                color: [[14, [0.800,0.851,0.847]], [15, [0.678,0.796,0.792]]]
-                                width: [[12, 0px], [13, 0.5px], [14, 1.0px], [15, 1.0px], [16, 1.5px], [18, 3.0px]]
-                    golf_course:
-                        filter: { landuse_kind: golf_course }
-                        draw:
-                            lines:
-                                outline:
-                                    color: [0.698,0.835,0.765]
-                    nature_reserve:
-                        filter: { landuse_kind: nature_reserve }
-                        draw:
-                            lines:
-                                outline:
-                                    color: [0.635,0.819,0.742]
-                    conservation:
-                        filter: { landuse_kind: conservation }
-                        draw:
-                            lines:
-                                outline:
-                                    color: orange
-                    zoo:
-                        filter: { landuse_kind: zoo }
-                        draw:
-                            lines:
-                                outline:
-                                    color: pink
                 labels-tertiary-default:
                     draw:
                         text-blend-order:
@@ -2079,50 +1909,6 @@ layers:
                         order: 350
                         outline:
                             order: 351
-            # Is this junk code?
-            round:
-                filter: { $zoom: { min: 17 } }
-                draw:
-                    lines:
-                        cap: round
-                        join: round
-
-            in_park:
-                filter: { landuse_kind: [park,protected_area,nature_reserve,conservation,golf_course,garden,wood,farmland,farm] }
-                draw:
-                    lines:
-                        #todo: is the width here right?
-                        #width: [[11, 0.5px], [12, 1.0px], [13, 1.2px], [14, 1.75px], [15, 2.5px], [16, 8m]]
-                        color: [[12, [0.9,0.9,0.9]], [13, [0.96,0.96,0.96]], [14, [1.0,1.0,1.0]]]
-                        outline:
-                            color: [[14, [0.800,0.851,0.847]], [15, [0.678,0.796,0.792]]]
-                            #todo: is the width here right?
-                            width: [[13, 0px], [14, 0.25px], [17, 2.0px], [18, 4.0px]]
-                golf_course:
-                    filter: { landuse_kind: golf_course }
-                    draw:
-                        lines:
-                            outline:
-                                color: [0.757,0.839,0.788]
-                nature_reserve:
-                    filter: { landuse_kind: nature_reserve }
-                    draw:
-                        lines:
-                            outline:
-                                color: [0.635,0.819,0.742]
-                conservation:
-                    filter: { landuse_kind: conservation }
-                    draw:
-                        lines:
-                            outline:
-                                color: orange
-                zoo:
-                    filter: { landuse_kind: zoo }
-                    draw:
-                        lines:
-                            outline:
-                                color: pink
-
             # in_residential:
             #     filter: { landuse_kind: residential }
             #     draw:
@@ -2135,7 +1921,7 @@ layers:
                     lines:
                         color: [[12, [0.9,0.9,0.9]], [13, [0.96,0.96,0.96]], [14, [1.0,1.0,1.0]]]
                         outline:
-                            color: [0.806,0.763,0.717]
+                            color: [0.763,0.763,0.763]
                             width: [[13, 0px], [14, 0.5px], [17, 2.0px], [18, 4.0px]]
             in_hospital:
                 filter: { landuse_kind: hospital }
@@ -2143,7 +1929,7 @@ layers:
                     lines:
                         color: [[12, [0.9,0.9,0.9]], [13, [0.96,0.96,0.96]], [14, [1.0,1.0,1.0]]]
                         outline:
-                            color: [0.818,0.702,0.713]
+                            color: [0.75,0.75,0.75]
                             width: [[13, 0px], [14, 0.5px], [17, 2.0px], [18, 4.0px]]
 
             tunnel:
@@ -2216,98 +2002,6 @@ layers:
                         color: [0.827,0.827,0.827]
                         width: [[15, 0px], [16, 0.5px], [17, 1.0px], [18, 1.75px]]
 
-            # Is this junk code?
-            round:
-                filter: { $zoom: { min: 17 } }
-                draw:
-                    lines:
-                        cap: round
-                        join: round
-
-            in_park:
-                filter: { landuse_kind: [park,forest,nature_reserve,conservation,golf_course,garden] }
-                draw:
-                    lines:
-                        #todo: is the color necc here?
-                        color: [0.976,0.976,0.976]
-                        outline:
-                            color: [[14, [0.800,0.851,0.847]], [15, [0.678,0.796,0.792]]]
-                            width: [[13, 0px], [14, 0.5px], [17, 2.0px], [18, 4.0px]]
-                golf_course:
-                    filter: { landuse_kind: golf_course }
-                    draw:
-                        lines:
-                            outline:
-                                color: [0.698,0.835,0.765]
-                nature_reserve:
-                    filter: { landuse_kind: nature_reserve }
-                    draw:
-                        lines:
-                            outline:
-                                color: [0.635,0.819,0.742]
-                conservation:
-                    filter: { landuse_kind: conservation }
-                    draw:
-                        lines:
-                            outline:
-                                color: orange
-                zoo:
-                    filter: { landuse_kind: zoo }
-                    draw:
-                        lines:
-                            outline:
-                                color: pink
-            in_cemetery_garden:
-                filter: { landuse_kind: [cemetery,garden] }
-                draw:
-                    lines:
-                        outline:
-                            color: [0.737,0.816,0.753]
-                            # todo: consider starting z13 with 0.25px
-                            width: [[13, 0px], [14, 0.5px], [17, 2.0px], [18, 4.0px]]
-            in_university:
-                filter: { landuse_kind: university }
-                draw:
-                    lines:
-                        #todo: is this necc here?
-                        color: [1.0,1.0,1.0]
-                        outline:
-                            color: [0.806,0.763,0.717]
-                            width: [[13, 0px], [14, 0.5px], [17, 2.0px], [18, 4.0px]]
-            in_hospital:
-                filter: { landuse_kind: hospital }
-                draw:
-                    lines:
-                        #todo: is this necc here?
-                        color: [1.0,1.0,1.0]
-                        outline:
-                            color: [0.818,0.702,0.713]
-                            width: [[13, 0px], [14, 0.5px], [17, 2.0px], [18, 4.0px]]
-            labels-service_road:
-                filter: { $zoom: 17 }
-                draw:
-                    text-blend-order:
-                        priority: 60
-                        visible: global.text_visible_service_road
-                        text_source: global.ux_language_text_source
-                        font:
-                            # need fill color?
-                            fill: [0.25,0.25,0.25]
-                            size: 13px
-                            stroke: { color: [1.00,1.00,1.00], width: 2 }
-            labels-service_road-z18:
-                filter: { $zoom: { min: 18 } }
-                draw:
-                    text-blend-order:
-                        priority: 60
-                        visible: global.text_visible_service_road
-                        text_source: global.ux_language_text_source
-                        font:
-                            # need fill color?
-                            fill: [0.15,0.15,0.15]
-                            size: 14px
-                            stroke: { color: [1.00,1.00,1.00], width: 2 }
-
         shields:
             filter:
                 all:
@@ -2371,7 +2065,7 @@ layers:
                                 }
                             }
                         font:
-                            family: Montserrat
+                            family: global.text_font_family
                             weight: 500
                             fill: [0.308,0.308,0.308]
                             size: [[7, 7px], [12, 8px], [15, 11px]]
@@ -2531,568 +2225,13 @@ layers:
                 #     mapzen_icon_library:
                 #         color: pink
 
-                # US Interstate roads
-                US-I:
-                    filter:
-                        network: 'US:I'
-                        shield_text: true
-                    draw:
-                        mapzen_icon_library:
-                            texture: mapzen_icon_library_shields_usa
-                            # you need to match any custom shield to the vector tile `network` values
-                            sprite: function() { return (feature.network + '-' + feature.shield_text.length + 'char'); }
-                            priority: 46
-                            visible: global.sdk_road_shields
-                            text:
-                                offset: [0px, 0.5px]
-                                font:
-                                    fill: [0.308,0.308,0.308]
-                                    size: [[7,8px],[13,9px],[15,11px]]
-                    width_1char:
-                        filter: function() { return (feature.shield_text.length === 1) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[15px,18px]],[13,[17px,20px]],[15,[22px,25px]]]
-                    width_2char:
-                        filter: function() { return (feature.shield_text.length === 2) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[18px,18px]],[13,[20px,20px]],[15,[25px,25px]]]
-                    width_3char:
-                        filter: function() { return (feature.shield_text.length === 3) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[23px,18px]],[13,[26px,20px]],[15,[33px,25px]]]
-                    width_4char:
-                        filter: function() { return (feature.shield_text.length === 4) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[25px,18px]],[13,[27px,20px]],[15,[35px,25px]]]
-                    width_5char:
-                        filter: function() { return (feature.shield_text.length === 5) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[26px,18px]],[13,[30px,20px]],[15,[38px,25px]]]
-                # US Federal Routes
-                US-US:
-                    filter:
-                        network: ['US:US','US:US:Business', 'US:US:Truck', 'US:US:Alternate']
-                        shield_text: true
-                        $zoom: { min: 7 }
-                    draw:
-                        mapzen_icon_library:
-                            texture: mapzen_icon_library_shields_usa
-                            # you need to match any custom shield to the vector tile `network` values
-                            sprite: |
-                                function() { return ('US:US-' + feature.shield_text.length + 'char'); }
-                            priority: 47
-                            cull_from_tile: true
-                            visible: global.sdk_road_shields
-                            text:
-                                offset: [0px, -0.7px]
-                                font:
-                                    fill: [0.380,0.318,0.312]
-                                    size: [[7,8px],[13,9px],[15,11px]]
-                    width_1char:
-                        filter: function() { return (feature.shield_text.length === 1) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[15px,17px]],[13,[17px,19px]],[15,[22px,24px]]]
-                    width_2char:
-                        filter: function() { return (feature.shield_text.length === 2) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[18px,17px]],[13,[20px,19px]],[15,[26px,24px]]]
-                    width_3char:
-                        filter: function() { return (feature.shield_text.length === 3) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[22px,17px]],[13,[25px,19px]],[15,[34px,25px]]]
-                    width_4char:
-                        filter: function() { return (feature.shield_text.length === 4) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[25px,17px]],[13,[29px,19px]],[15,[39px,25px]]]
-                    width_5char:
-                        filter: function() { return (feature.shield_text.length === 5) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[27px,17px]],[13,[30px,19px]],[15,[41px,25px]]]
-                # US State Routes
-                # US-states:
-                #     # Match state highways: `US:??`
-                #     filter: |
-                #         function() {
-                #             return feature.shield_text &&
-                #                 /^US:(?!US)\w\w$/.test(feature.network)
-                #         }
-                #     draw:
-                #         mapzen_icon_library:
-                #             # you need to match any custom shield to the vector tile `network` values
-                #             #priority: 48
-                #             visible: global.sdk_road_shields
-                US-CA:
-                    # Match California state highways: `US:CA`
-                    filter: |
-                        function() {
-                            return feature.shield_text && /^US:CA$/.test(feature.network)
-                        }
-                    draw:
-                        mapzen_icon_library:
-                            texture: mapzen_icon_library_shields_usa
-                            sprite: function() { return (feature.network + '-' + feature.shield_text.length + 'char'); }
-                            #priority: 48
-                            text:
-                                offset: [0px, 1px]
-                                font:
-                                    fill: [0.308,0.308,0.308]
-                                    size: [[7,7px],[13,9px],[15,10px]]
-                    motorway:
-                        filter: { kind_detail: [motorway], $zoom: [7,8] }
-                        draw:
-                            mapzen_icon_library:
-                                visible: global.sdk_road_shields
-                    trunk:
-                        filter: { kind_detail: [trunk], $zoom: [8,9] }
-                        draw:
-                            mapzen_icon_library:
-                                visible: global.sdk_road_shields
-                    primary:
-                        filter: { kind_detail: primary, $zoom: [10,11] }
-                        draw:
-                            mapzen_icon_library:
-                                visible: global.sdk_road_shields
-                    width_1char:
-                        filter: function() { return (feature.shield_text.length === 1) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[14px,16px]],[13,[15px,18px]],[15,[18px,21px]]]
-                    width_2char:
-                        filter: function() { return (feature.shield_text.length === 2) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[18px,18px]],[13,[20px,20px]],[15,[23px,23px]]]
-                    width_3char:
-                        filter: function() { return (feature.shield_text.length === 3) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[21px,18px]],[13,[24px,20px]],[15,[28px,23px]]]
-                    width_4char:
-                        filter: function() { return (feature.shield_text.length === 4) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[24px,18px]],[13,[26px,20px]],[15,[31px,23px]]]
-                    width_5char:
-                        filter: function() { return (feature.shield_text.length === 5) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[25px,18px]],[13,[27px,20px]],[15,[32px,23px]]]
-                US-NY:
-                    # Match New York state highways: `US:NY`
-                    filter: |
-                        function() {
-                            return feature.shield_text && (
-                                /^US:NY$/.test(feature.network)
-                                /* (/^US:NY$/.test(feature.network) || /^NY:US$/.test(feature.network)) */
-                            )
-                        }
-                    draw:
-                        mapzen_icon_library:
-                            texture: mapzen_icon_library_shields_usa
-                            sprite: |
-                                function() { return ( 'US:NY-' + feature.shield_text.length + 'char'); }
-                            text:
-                                # offset: [0px, 1px]
-                                font:
-                                    fill: [0.308,0.308,0.308]
-                                    size: [[7,7px],[13,9px],[15,10px]]
-                    width_1char:
-                        filter: function() { return (feature.shield_text.length === 1) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[13px,17px]],[13,[15px,19px]],[15,[18px,22px]]]
-                    width_2char:
-                        filter: function() { return (feature.shield_text.length === 2) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[17px,17px]],[13,[19px,19px]],[15,[22px,22px]]]
-                    width_3char:
-                        filter: function() { return (feature.shield_text.length === 3) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[20px,17px]],[13,[22px,19px]],[15,[27px,22px]]]
-                    width_4char:
-                        filter: function() { return (feature.shield_text.length === 4) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[21px,17px]],[13,[24px,19px]],[15,[29px,22px]]]
-                    width_5char:
-                        filter: function() { return (feature.shield_text.length === 5) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[22px,17px]],[13,[25px,19px]],[15,[30px,22px]]]
-                US-PA:
-                    # Match Pennsylvania state highways
-                    filter: |
-                        function() {
-                            return feature.shield_text && /^US:PA$/.test(feature.network)
-                        }
-                    draw:
-                        mapzen_icon_library:
-                            texture: mapzen_icon_library_shields_usa
-                            sprite: |
-                                function() { return ( 'US:PA-' + feature.shield_text.length + 'char'); }
-                            text:
-                                offset: [0px, 1px]
-                                font:
-                                    fill: [0.308,0.308,0.308]
-                                    size: [[7,7px],[13,9px],[15,10px]]
-                    width_1char:
-                        filter: function() { return (feature.shield_text.length === 1) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[13px,17px]],[13,[15px,19px]],[15,[18px,22px]]]
-                    width_2char:
-                        filter: function() { return (feature.shield_text.length === 2) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[17px,17px]],[13,[19px,19px]],[15,[22px,22px]]]
-                    width_3char:
-                        filter: function() { return (feature.shield_text.length === 3) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[21px,17px]],[13,[24px,19px]],[15,[28px,22px]]]
-                    width_4char:
-                        filter: function() { return (feature.shield_text.length === 4) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[22px,17px]],[13,[25px,19px]],[15,[30x,22px]]]
-                    width_5char:
-                        filter: function() { return (feature.shield_text.length === 5) }
-                        draw:
-                            mapzen_icon_library:
-                                size: [[6,[24px,17px]],[13,[27px,19px]],[15,[32px,22px]]]
-                # USA County Routes
-                US-counties:
-                    # Match state highways: `US:??:*`
-                    #
-                    # this is very USA specific
-                    #
-                    # filter: |
-                    #     function() {
-                    #         return feature.shield_text &&
-                    #             /^US:(?!US)\w\w:.*$/.test(feature.network)
-                    #     }
-                    #
-                    # this generic for any country with 3rd level networks (like county routes in USA)
-                    # BEWARE:
-                    # US:US:Business  about 150
-                    # US:US:Truck
-                    # US:US:Alternate
-    #
-                    # STATE ROUTE
-                    # ??:??:Loop  about 200
-                    # ??:??:Spur  about 200
-                    # ??:??:Business   about 100
-    #
-                    # STATE TEXAS SPECIAL ROUTE
-                    # US:TX:FM -- probably just state? there are 3k of these
-                    #
-                    #
-                    filter: |
-                        function() {
-                            return feature.shield_text &&
-                                /^\w+:\w+:(!Alternate).+$/.test(feature.network) &&
-                                $zoom > 10
-                        }
-                    draw:
-                        mapzen_icon_library:
-                            texture: mapzen_icon_library_shields_usa
-                            # you need to match any custom shield to the vector tile `network` values
-                            sprite: function() { return ('county_shield-' + feature.shield_text.length + 'char'); }
-                            #color: pink
-                            #priority: 19
-                            visible: global.sdk_road_shields
-                            text:
-                                font:
-                                    fill: [0.508,0.508,0.508]
-                                    #size: [[11,7px],[15,10px]]
-                    #width_1char:
-#                        filter: function() { return (feature.shield_text.length === 1) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[14px,14px]],[13,[16px,16px]],[15,[18px,18px]]]
-#                    width_2char:
-#                        filter: function() { return (feature.shield_text.length === 2) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[16px,14px]],[13,[18px,15px]],[15,[22px,18px]]]
-#                    width_3char:
-#                        filter: function() { return (feature.shield_text.length === 3) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[20px,14px]],[13,[21px,15px]],[15,[26px,18px]]]
-#                    width_4char:
-#                        filter: function() { return (feature.shield_text.length === 4) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[25px,14px]],[13,[28px,15px]],[15,[34px,18px]]]
-#                    width_5char:
-#                        filter: function() { return (feature.shield_text.length === 5) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[30px,14px]],[13,[33px,15px]],[15,[40px,18px]]]
-
-                US-OTHER:
-                    filter: |
-                        function() {
-                            return feature.shield_text && (
-                                /^US:AK$/.test(feature.network) ||
-                                /^US:AL$/.test(feature.network) ||
-                                /^US:AR$/.test(feature.network) ||
-                                /^US:AZ$/.test(feature.network) ||
-                                /^US:BIA$/.test(feature.network) ||
-                                /^US:BLM$/.test(feature.network) ||
-                                /^US:CO$/.test(feature.network) ||
-                                /^US:DC$/.test(feature.network) ||
-                                /^US:FL$/.test(feature.network) ||
-                                /^US:FSH$/.test(feature.network) ||
-                                /^US:FSR$/.test(feature.network) ||
-                                /^US:GA$/.test(feature.network) ||
-                                /^US:HI$/.test(feature.network) ||
-                                /^US:ID$/.test(feature.network) ||
-                                /^US:KS$/.test(feature.network) ||
-                                /^US:LA$/.test(feature.network) ||
-                                /^US:MA$/.test(feature.network) ||
-                                /^US:CT$/.test(feature.network) ||
-                                /^US:IL$/.test(feature.network) ||
-                                /^US:TX$/.test(feature.network) ||
-                                /^US:IN$/.test(feature.network) ||
-                                /^US:RI$/.test(feature.network) ||
-                                /^US:ME$/.test(feature.network) ||
-                                /^US:WV$/.test(feature.network) ||
-                                /^US:MT$/.test(feature.network) ||
-                                /^US:MD$/.test(feature.network) ||
-                                /^US:MN$/.test(feature.network) ||
-                                /^US:MO$/.test(feature.network) ||
-                                /^US:NC$/.test(feature.network) ||
-                                /^US:MI$/.test(feature.network) ||
-                                /^US:ND$/.test(feature.network) ||
-                                /^US:NE$/.test(feature.network) ||
-                                /^US:NH$/.test(feature.network) ||
-                                /^US:NJ$/.test(feature.network) ||
-                                /^US:NV$/.test(feature.network) ||
-                                /^US:IA$/.test(feature.network) ||
-                                /^US:DE$/.test(feature.network) ||
-                                /^US:KY$/.test(feature.network) ||
-                                /^US:MS$/.test(feature.network) ||
-                                /^US:NM$/.test(feature.network) ||
-                                /^US:NV$/.test(feature.network) ||
-                                /^US:OH$/.test(feature.network) ||
-                                /^US:OK$/.test(feature.network) ||
-                                /^US:OR$/.test(feature.network) ||
-                                /^US:SC$/.test(feature.network) ||
-                                /^US:SD$/.test(feature.network) ||
-                                /^US:TN$/.test(feature.network) ||
-                                /^US:UT$/.test(feature.network) ||
-                                /^US:VA$/.test(feature.network) ||
-                                /*TODO: US:VA:secondary*/
-                                /^US:VT$/.test(feature.network) ||
-                                /^US:WA$/.test(feature.network) ||
-                                /^US:WI$/.test(feature.network) ||
-                                /^US:WY$/.test(feature.network)
-                                /*US:CA*/
-                                /*US:I*/
-                                /*US:NY*/
-                                /*US:PA*/
-                                /*US:US*/
-                                /*county_shield*/
-                            )
-                        }
-                    draw:
-                        mapzen_icon_library:
-                            texture: mapzen_icon_library_shields_usa
-                            sprite: |
-                                function() { return ( feature.network + '-' + feature.shield_text.length + 'char'); }
-                            text:
-                                # offset: [0px, 1px]
-                                font:
-                                    fill: [0.308,0.308,0.308]
-                                    #size: [[7,7px],[13,9px],[15,10px]]
-#                    width_1char:
-#                        filter: function() { return (feature.shield_text.length === 1) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[13px,17px]],[13,[15px,19px]],[15,[18px,22px]]]
-#                    width_2char:
-#                        filter: function() { return (feature.shield_text.length === 2) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[17px,17px]],[13,[19px,19px]],[15,[22px,22px]]]
-#                    width_3char:
-#                        filter: function() { return (feature.shield_text.length === 3) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[20px,17px]],[13,[22px,19px]],[15,[27px,22px]]]
-#                    width_4char:
-#                        filter: function() { return (feature.shield_text.length === 4) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[21px,17px]],[13,[24px,19px]],[15,[29px,22px]]]
-#                    width_5char:
-#                        filter: function() { return (feature.shield_text.length === 5) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[22px,17px]],[13,[25px,19px]],[15,[30px,22px]]]
-
                 international-shields:
                     filter: |
                         function() {
                             return feature.shield_text && (
-                                /^AM:AM.*$/.test(feature.network) ||
-                                /^AR:AR.*$/.test(feature.network) ||
-                                /^AR:PR.*$/.test(feature.network) ||
-                                /^AT:A.*$/.test(feature.network) ||
-                                /^AT:L.*$/.test(feature.network) ||
-                                /^AT:S.*$/.test(feature.network) ||
-                                /^AU:AU.*$/.test(feature.network) ||
-                                /^AU:I.*$/.test(feature.network) ||
-                                /^AU:A.*$/.test(feature.network) ||
-                                /^AU:M.*$/.test(feature.network) ||
-                                /^A.*$/.test(feature.network) ||
-                                /^M.*$/.test(feature.network) ||
-                                /^AU:I3.*$/.test(feature.network) ||
-                                /^AU:MR.*$/.test(feature.network) ||
-                                /^AU:TD.*$/.test(feature.network) ||
-                                /^BD:NH.*$/.test(feature.network) ||
-                                /^BE:I.*$/.test(feature.network) ||
-                                /^BR$/.test(feature.network) ||
-                                /^BR:.*$/.test(feature.network) ||
-                                /^BR.*$/.test(feature.network) ||
-                                /^BR:TA.*$/.test(feature.network) ||
-                                /^CA:AB.*$/.test(feature.network) ||
-                                /^CA:BC.*$/.test(feature.network) ||
-                                /^CA:I.*$/.test(feature.network) ||
-                                /^CA:transcanada$/.test(feature.network) ||
-                                /^CA:I2.*$/.test(feature.network) ||
-                                /^CA:MB.*$/.test(feature.network) ||
-                                /^CA:NL.*$/.test(feature.network) ||
-                                /^CA:NL2.*$/.test(feature.network) ||
-                                /^CA:NL3.*$/.test(feature.network) ||
-                                /^CA:NS.*$/.test(feature.network) ||
-                                /^CA:NT.*$/.test(feature.network) ||
-                                /^CA:ON.*$/.test(feature.network) ||
-                                /^CA:PEI.*$/.test(feature.network) ||
-                                /^CA:QC.*$/.test(feature.network) ||
-                                /^CA:SK.*$/.test(feature.network) ||
-                                /^CA:YT.*$/.test(feature.network) ||
-                                /^CH:A.*$/.test(feature.network) ||
-                                /^CH:E.*$/.test(feature.network) ||
-                                /^CL:CL.*$/.test(feature.network) ||
-                                /^CL:CL2.*$/.test(feature.network) ||
-                                /^CL:VP.*$/.test(feature.network) ||
-                                /^CN:EXP.*$/.test(feature.network) ||
-                                /^CN-expressways.*$/.test(feature.network) ||
-                                /^CN-roads.*$/.test(feature.network) ||
-                                /^DE:A.*$/.test(feature.network) ||
-                                /^BAB.*$/.test(feature.network) ||
-                                /^DE:DE.*$/.test(feature.network) ||
-                                /^B.*$/.test(feature.ref) ||
-                                /^B .*$/.test(feature.ref) ||
-                                /^DE:L.*$/.test(feature.network) ||
-                                /^dk:national.*$/.test(feature.network) ||
-                                /^DK:D.*$/.test(feature.network) ||
-                                /^ES:A.*$/.test(feature.network) ||
-                                /^ES:AA.*$/.test(feature.network) ||
-                                /^ES:AA2.*$/.test(feature.network) ||
-                                /^ES:C.*$/.test(feature.network) ||
-                                /^ES:IU.*$/.test(feature.network) ||
-                                /^e-road.*$/.test(feature.network) ||
-                                /^FI:FI.*$/.test(feature.network) ||
-                                /^FI:FS.*$/.test(feature.network) ||
-                                /^FI:LR.*$/.test(feature.network) ||
-                                /^FI:RR.*$/.test(feature.network) ||
-                                /^FR:A-road.*$/.test(feature.network) ||
-                                /^A.*$/.test(feature.ref) ||
-                                /^A .*$/.test(feature.ref) ||
-                                /^FR:.*:.*$/.test(feature.network) ||
-                                /^D.*$/.test(feature.ref) ||
-                                /^D .*$/.test(feature.ref) ||
-                                /^FR:N-road.*$/.test(feature.network) ||
-                                /^N.*$/.test(feature.ref) ||
-                                /^N .*$/.test(feature.ref) ||
-                                /^GR:I.*$/.test(feature.network) ||
-                                /^GR:motorway$/.test(feature.network) ||
-                                /^GR:GR.*$/.test(feature.network) ||
-                                /^GR:national$/.test(feature.network) ||
-                                /^ID:ID.*$/.test(feature.network) ||
-                                /^IE:M.*$/.test(feature.network) ||
-                                /^IE:N.*$/.test(feature.network) ||
-                                /^IE:R.*$/.test(feature.network) ||
-                                /^IN:IN.*$/.test(feature.network) ||
-                                /^IN:NH$/.test(feature.network) ||
-                                /^IN:NH:.*$/.test(feature.network) ||
-                                /^IN:SH.*$/.test(feature.network) ||
-                                /^IQ:IQ.*$/.test(feature.network) ||
-                                /^IT:AS.*$/.test(feature.network) ||
-                                /^IT:RA.*$/.test(feature.network) ||
-                                /^IT:SP.*$/.test(feature.network) ||
-                                /^IT:SR.*$/.test(feature.network) ||
-                                /^IT:SS.*$/.test(feature.network) ||
-                                /^JP:EX.*$/.test(feature.network) ||
-                                /^JP:national.*$/.test(feature.network) ||
-                                /^JP:prefectural.*$/.test(feature.network) ||
-                                /^jp:prefectural.*$/.test(feature.network) ||
-                                /^LU:CR.*$/.test(feature.network) ||
-                                /^LU:M.*$/.test(feature.network) ||
-                                /^LU:RN.*$/.test(feature.network) ||
-                                /^MX:MX.*$/.test(feature.network) ||
-                                /^MEX$/.test(feature.network) ||
-                                /^MEX.*$/.test(feature.ref) ||
-                                /^MX:SH.*$/.test(feature.network) ||
-                                /^MY:E.*$/.test(feature.network) ||
-                                /^NL:A.*$/.test(feature.network) ||
-                                /^NL:N.*$/.test(feature.network) ||
-                                /^NL:S.*$/.test(feature.network) ||
                                 /^NO:CR.*$/.test(feature.network) ||
                                 /^NO:RR.*$/.test(feature.network) ||
-                                /^NO:TR.*$/.test(feature.network) ||
-                                /^NZ:SH.*$/.test(feature.network) ||
-                                /^NZ:SR.*$/.test(feature.network) ||
-                                /^PE:PE.*$/.test(feature.network) ||
-                                /^PL:NR.*$/.test(feature.network) ||
-                                /^PL:VR.*$/.test(feature.network) ||
-                                /^PT:A.*$/.test(feature.network) ||
-                                /^PT:IC.*$/.test(feature.network) ||
-                                /^PT:IP.*$/.test(feature.network) ||
-                                /^RO:AS.*$/.test(feature.network) ||
-                                /^RO:DJ.*$/.test(feature.network) ||
-                                /^RO:DX.*$/.test(feature.network) ||
-                                /^RO:DС.*$/.test(feature.network) ||
-                                /^ru:national.*$/.test(feature.network) ||
-                                /^SA:SA.*$/.test(feature.network) ||
-                                /^SE:A.*$/.test(feature.network) ||
-                                /^SG:E.*$/.test(feature.network) ||
-                                /^SK:I.*$/.test(feature.network) ||
-                                /^SK:LR.*$/.test(feature.network) ||
-                                /^SK:SK.*$/.test(feature.network) ||
-                                /^TH:TH.*$/.test(feature.network) ||
-                                /^TH:TM2.*$/.test(feature.network) ||
-                                /^TH:TM3.*$/.test(feature.network) ||
-                                /^TR:DY.*$/.test(feature.network) ||
-                                /^TR:OR.*$/.test(feature.network) ||
-                                /^UA:M.*$/.test(feature.network) ||
-                                /^UA:P.*$/.test(feature.network) ||
-                                /^UA:P2.*$/.test(feature.network) ||
-                                /^UK:A.*$/.test(feature.network) ||
-                                /^UK:G.*$/.test(feature.network) ||
-                                /^UK:M.*$/.test(feature.network) ||
-                                /^VN:I.*$/.test(feature.network) ||
-                                /^VN:PR.*$/.test(feature.network) ||
-                                /^VN:VN.*$/.test(feature.network) ||
-                                /^ZA:M.*$/.test(feature.network) ||
-                                /^ZA:P.*$/.test(feature.network) ||
-                                /^ZA:R.*$/.test(feature.network)
+                                /^NO:TR.*$/.test(feature.network)
                             )
                         }
                     draw:
@@ -3112,133 +2251,6 @@ layers:
                                 font:
                                     fill: [0.308,0.308,0.308]
                                     #size: [[7,7px],[13,9px],[15,10px]]
-                    zoom8up:
-                        filter: |
-                            function() {
-                                return $zoom >= 8 && (
-                                    /^BR$/.test(feature.network) ||
-                                    /^BAB.*$/.test(feature.network) ||
-                                    /^CA:transcanada$/.test(feature.network) ||
-                                    /^CN-expressways$/.test(feature.network) ||
-                                    /^FR:A-road.*$/.test(feature.network) ||
-                                    /^A.*$/.test(feature.ref) ||
-                                    /^MEX$/.test(feature.network) ||
-                                    /^MEX.*$/.test(feature.ref) ||
-                                    /^ru:national$/.test(feature.network) ||
-                                    /^sk:national$/.test(feature.network) ||
-                                    /^GR:motorway$/.test(feature.network) ||
-                                    /^GR:national$/.test(feature.network) ||
-                                    /^IN:NH$/.test(feature.network) ||
-                                    /^IN:NH:.*$/.test(feature.network)
-                                )
-                            }
-                        draw:
-                            mapzen_icon_library:
-                                visible: global.sdk_road_shields
-
-#                    width_1char:
-#                        filter: function() { return (feature.shield_text.length === 1) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[13px,17px]],[13,[15px,19px]],[15,[18px,22px]]]
-#                    width_2char:
-#                        filter: function() { return (feature.shield_text.length === 2) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[17px,17px]],[13,[19px,19px]],[15,[22px,22px]]]
-#                    width_3char:
-#                        filter: function() { return (feature.shield_text.length === 3) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[20px,17px]],[13,[22px,19px]],[15,[27px,22px]]]
-#                    width_4char:
-#                        filter: function() { return (feature.shield_text.length === 4) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[21px,17px]],[13,[24px,19px]],[15,[29px,22px]]]
-#                    width_5char:
-#                        filter: function() { return (feature.shield_text.length === 5) }
-#                        draw:
-#                            mapzen_icon_library:
-#                                size: [[6,[22px,17px]],[13,[25px,19px]],[15,[30px,22px]]]
-
-                    brazil-shields:
-                        filter: |
-                            function() {
-                                return feature.shield_text && /^BR:.*$/.test(feature.network)
-                            }
-                        draw:
-                            mapzen_icon_library:
-                                sprite: |
-                                    function() {
-                                        return ( 'BR:BR-' + feature.shield_text.length + 'char');
-                                    }
-                    france-a-and-n-road-ref-shields:
-                        filter: |
-                            function() {
-                                return ((feature.ref && !feature.shield_text) && (/^A .*$/.test(feature.ref) || /^N .*$/.test(feature.ref))) ||
-                                    ((feature.ref && feature.network == 'e-road') && (/^A .*$/.test(feature.ref) || /^N .*$/.test(feature.ref)))
-                            }
-                        draw:
-                            mapzen_icon_library:
-                                sprite: |
-                                    function() {
-                                        return ( 'FR:A-road-' + feature.ref.replace(" ", "").length + 'char');
-                                    }
-                                text:
-                                    text_source: |
-                                        function() {
-                                            return feature.ref.replace(" ", "");
-                                        }
-                    france-department-shields:
-                        filter: |
-                            function() {
-                                return ((feature.ref &&
-                                    ! feature.shield_text) &&
-                                    /^FR:.*:.*$/.test(feature.network) ||
-                                    /^D .*$/.test(feature.ref)) ||
-                                    ( feature.ref &&
-                                      /^D .*$/.test(feature.ref))
-                            }
-                        draw:
-                            mapzen_icon_library:
-                                sprite: |
-                                    function() {
-                                        var text_len = feature.shield_text.length || feature.ref.length;
-                                        return ( 'FR:D-' + text_len + 'char');
-                                    }
-                    germany-b-shields:
-                        filter: |
-                            function() {
-                                return feature.ref && /^B .*$/.test(feature.ref)
-                            }
-                        draw:
-                            mapzen_icon_library:
-                                sprite: |
-                                    function() {
-                                        return ( 'DE:DE-' + feature.ref.length + 'char');
-                                    }
-                z-mexico-shields:
-                    filter: |
-                        function() {
-                            return feature.ref && (
-                                /^MEX$/.test(feature.network) ||
-                                /^MEX.*$/.test(feature.ref)
-                            )
-                        }
-                    draw:
-                        mapzen_icon_library:
-                            visible: global.sdk_road_shields
-                            sprite: |
-                                function() {
-                                    return ( 'MX:MX-' + feature.ref.replace("MEX ", "").length + 'char');
-                                }
-                            text:
-                                text_source: |
-                                    function() {
-                                        return feature.ref.replace("MEX ", "");
-                                    }
-
         path:
             filter:
                 all:
@@ -3282,77 +2294,6 @@ layers:
                             color: [[15, global.path_bridge_casing2],[16, global.path_bridge_casing1]]
                             width: [[15, 0px], [16, 1.0px], [18, 3px]]
                             cap: butt
-            in_park:
-                # should `forest` and `wood` be included?
-                filter: { landuse_kind: [park,nature_reserve,conservation,golf_course,garden] }
-                draw:
-                    lines:
-                        color: [[14,white], [16,white], [17, [0.95,0.95,0.95]]]
-                        outline:
-                            color: [[16, [0.725,0.847,0.847]], [17, [0.663,0.847,0.843]]]
-                            width: [[15, 0px], [16, 0.5px], [18, 3px]]
-                golf_course:
-                    filter: { landuse_kind: golf_course }
-                    draw:
-                        lines:
-                            outline:
-                                color: [0.698,0.835,0.765]
-                nature_reserve:
-                    filter: { landuse_kind: nature_reserve }
-                    draw:
-                        lines:
-                            outline:
-                                color: [0.635,0.819,0.742]
-                conservation:
-                    filter: { landuse_kind: conservation }
-                    draw:
-                        lines:
-                            outline:
-                                color: orange
-            in_cemetery_garden:
-                filter: { landuse_kind: [cemetery,garden] }
-                draw:
-                    lines:
-                        outline:
-                            color: [0.737,0.816,0.753]
-                            width: [[15, 0px], [16, 0.5px], [18, 3px]]
-            in_zoo:
-                filter: { landuse_kind: zoo }
-                draw:
-                    lines:
-                        outline:
-                            color: [0.708,0.881,0.831]
-                            width: [[15, 0px], [16, 0.5px], [18, 3px]]
-            in_university:
-                filter: { landuse_kind: university }
-                draw:
-                    lines:
-                        color: [[14, [0.97,0.97,0.97]], [16,[0.96,0.96,0.96]]]
-                        outline:
-                            color: [0.806,0.763,0.717]
-                            # todo: consider starting 14 at 0px so z15 has a little width
-                            width: [[15, 0px], [16, 0.5px], [18, 3px]]
-            in_hospital:
-                filter: { landuse_kind: hospital }
-                draw:
-                    lines:
-                        color: [[14,[0.90,0.90,0.90]],[16,[0.96,0.96,0.96]]]
-                        outline:
-                            color: [0.847,0.788,0.796]
-                            # todo: consider starting 14 at 0px so z15 has a little width
-                            width: [[15, 0px], [16, 0.5px], [18, 3px]]
-            labels-path:
-                filter: { $zoom: { min: 17 } }
-                draw:
-                    text-blend-order:
-                        priority: 61
-                        visible: global.text_visible_path
-                        text_source: global.ux_language_text_source
-                        font:
-                            # need a fill color?
-                            fill: [0.25,0.25,0.25]
-                            size: 12px
-                            stroke: { color: [1.00,1.00,1.00], width: 1 }
         track:
             filter: { kind: path, kind_detail: track }
             draw:
@@ -3489,7 +2430,7 @@ layers:
                     color: [0.993,0.993,0.993]
                     width: [[13, 0px], [14, 0.5px],[15, 1.5px], [16, 2.5px],[17, 3px],[18, 3m]]
                     outline:
-                        color: [0.675,0.855,0.886]
+                        color: [0.75,0.75,0.75]
                         width: [[15, 0px],[16,0.65px], [17, 0.75px], [18, 1px], [19, 1.5px]]
         racetrack:
             filter: { kind: racetrack }
@@ -3527,72 +2468,12 @@ layers:
                         color: [[13,[0.913,0.913,0.913]],[15,[0.923,0.923,0.923]],[16,[0.95,0.95,0.95]]]
                         width: [[13,1px],[14,2px],[15,3px],[16,7px],[17,20m]]
                         outline:
-                            color: [0.778,0.778,0.797]
+                            color: [0.778,0.778,0.778]
                 early:
                     filter: { $zoom: { max: 13 } }
                     draw:
                         lines:
                             visible: false
-        ferry:
-            filter: { kind: ferry }
-            draw:
-                lines:
-                    color: [0.702,0.843,0.933]
-                    width: [[12, 0.5px], [14, 1.0px], [15, 1.0px], [16, 1.25px]]
-                    outline:
-                        width: 0
-        aerialway:
-            filter: { kind: aerialway }
-            draw:
-                lines:
-                    color: '#444'
-                    width: [[14, 0.5px], [15, 1.0px], [16, 2m]]
-            gondola_cable_car:
-                filter: { kind_detail: [gondola, cable_car] }
-                draw:
-                    lines:
-                        color: [0.498,0.302,0.243]
-                        width: [[12, 0.5px], [13, 0.5px], [14, 0.6px], [15, 1px], [16, 2px]]
-                    lines_transparent:
-                        color: [0.498,0.302,0.243,0.15]
-                        width: [[12, 0px], [13, 5px], [14, 8px], [15, 10px], [16, 12px]]
-            chair_lift:
-                filter: { kind_detail: chair_lift }
-                draw:
-                    lines:
-                        color: [0.493,0.541,0.666]
-                        width: [[12, 0.5px], [13, 0.5px], [14, 0.6px], [15, 1px], [16, 1px], [16, 2px], [18, 3m]]
-                    lines_transparent:
-                        color: [0.635,0.698,0.859,0.20]
-                        width: [[12, 0px], [13, 5px], [14, 8px], [15, 10px], [16, 12px], [18, 20px]]
-            aerialway-labels:
-                filter: { $zoom: { min: 14 } }
-                draw:
-                    text-blend-order:
-                        priority: 63
-                        visible: global.text_visible_aerialway
-                        text_source: global.ux_language_text_source
-                        font:
-                            fill: global.text_fill
-                            size: 12px
-                            stroke: { color: global.grey8, width: 4 }
-                minor:
-                    filter: { not: { kind_detail: [gondola,cable_car,chair_lift] }, $zoom: { max: 17 } }
-                    draw:
-                        text-blend-order:
-                            visible: false
-                early_gondola:
-                    filter: { $zoom: [14], kind_detail: [gondola,cable_car] }
-                    draw:
-                        text-blend-order:
-                            font:
-                                weight: 600
-                later:
-                    filter: { $zoom: { min: 15 } }
-                    draw:
-                        text-blend-order:
-                            font:
-                                weight: 600
         bridges-tunnels:
             filter: { any: [is_bridge: true, is_tunnel: true] }
             draw:
@@ -3728,60 +2609,6 @@ layers:
                         polygons:
                             color: [0.892,0.880,0.878]
 
-        # landuse-specific rules
-        in_park:
-            filter:
-                landuse_kind: [park,forest,nature_reserve,conservation,golf_course,garden]
-            draw:
-                polygons:
-                    color: [0.864,0.910,0.905]
-
-            # golf_course:
-            #     filter: { landuse_kind: golf_course }
-            #     draw:
-            #         polygons:
-            #             color: global.building2
-            # nature_reserve:
-            #     filter: { landuse_kind: nature_reserve }
-            #     draw:
-            #         polygons:
-            #             color: global.building2
-            # conservation:
-            #     filter: { landuse_kind: conservation }
-            #     draw:
-            #         polygons:
-            #             color: global.building2
-            # zoo:
-            #     filter: { landuse_kind: zoo }
-            #     draw:
-            #         polygons:
-            #             color: global.building2
-        in_university:
-            filter: { landuse_kind: [university,school] }
-            draw:
-                polygons:
-                    color: [0.950,0.917,0.883]
-                lines:
-                    color: global.brown1_bo
-        in_hospital:
-            filter: { landuse_kind: hospital }
-            draw:
-                polygons:
-                    color: [0.976,0.908,0.913]
-        in_airport:
-            filter: { landuse_kind: [aerodrome, runway, taxiway] }
-            draw:
-                polygons:
-                    color: global.purple_b
-                lines:
-                    color: global.purple_bo
-                    width: [[14,0.5px],[15,0.5px],[17,0.5px],[18,0.75px],[19,0.25m]]
-        in_retail:
-           filter: { landuse_kind: retail }
-           draw:
-                polygons:
-                    color: [0.945, 0.898, 0.878]
-
         transit-overlay-station-buildings:
             filter:
                 all:
@@ -3909,7 +2736,7 @@ layers:
                         offset: [0, 5px]
                         text_wrap: 100px
                         font:
-                            family: Varela
+                            family: global.text_font_family
                             size: 9px
                             weight: 300
                             fill: [0.25,0.25,0.25]
@@ -3967,7 +2794,7 @@ layers:
                         offset: [0, 5px]
                         text_wrap: 100px
                         font:
-                            family: Varela
+                            family: global.text_font_family
                             size: 9px
                             weight: 200
                             fill: [0.4,0.4,0.4]
@@ -3992,7 +2819,7 @@ layers:
                     visible: false    # labels are enabled by each layer below
                     buffer: 3px
                     font:
-                        family: Varela
+                        family: global.text_font_family
                         fill: global.text_fill
             # NOTE: This is a hack for localities because of an icon & text bug, see note below
             text-blend-order:
@@ -4000,7 +2827,7 @@ layers:
                 visible: false    # labels are enabled by each layer below
                 buffer: 3px
                 font:
-                    family: Varela
+                    family: global.text_font_family
                     fill: global.text_fill
             # END NOTE
 
@@ -4013,7 +2840,7 @@ layers:
                     priority: 3
                     visible: global.text_visible_admin
                     font:
-                        fill: [[2,[0.357,0.243,0.184]],[6,[0.604,0.437,0.427]]]
+                        fill: [[2,[0.243,0.243,0.243]],[6,[0.5,0.5,0.5]]]
                         transform: uppercase
             country-z2-z3:
                 filter:
@@ -4650,7 +3477,7 @@ layers:
                     text_wrap: 10
                     max_lines: 2
                     font:
-                        family: Varela
+                        family: global.text_font_family
                         fill: [0.225,0.561,0.415]
                         size: [[11, 9px], [14, 12px], [16, 18px]]
                         transform: uppercase
@@ -4714,7 +3541,7 @@ layers:
                     text_wrap: 18
                     max_lines: 3
                     font:
-                        family: Quicksand #global.text_font_family
+                        family: global.text_font_family
                         weight: normal
                         fill: [0.20,0.20,0.20]
                         size: [[13,10px],[14,11px],[17,12px],[19,12px],[20,14px]]
@@ -5295,7 +4122,7 @@ layers:
                     text_source: ref
                     priority: 63
                     font:
-                        family: Montserrat
+                        family: global.text_font_family
                         fill: global.text_fill_exits
                         size: [[12,9px],[15,12px],[17,14px]]
                         stroke: { color: global.text_stroke, width: [[12,2px],[14,3px],[15,3px]] }
@@ -5321,7 +4148,7 @@ layers:
                     text_source: global.ux_language_text_source_continent_stacked_only
                     text_wrap: false
                     font:
-                        family: Varela
+                        family: global.text_font_family
                         size: [[1,11px],[3,14px]]
                         fill: [0.762,0.525,0.428]
                         transform: uppercase
@@ -5355,45 +4182,6 @@ layers:
                 visible: false
             polygons:
                 order: global.feature_order
-                #debug for polygon merging
-                #order: |
-#                   function() {
-#                       if( feature.id ) {
-#                           return 1001;
-#                       } else {
-#                           return 1000;
-#                       }
-#                   }
-                #debug for polygon merging
-                #color: |
-#                   function() {
-#                       if( feature.id ) {
-#                           return [
-#                               0.7 * (parseInt(feature.id, 16) / 100 % 1),     // jshint ignore:line
-#                               0.7 * (parseInt(feature.id, 16) / 10000 % 1),   // jshint ignore:line
-#                               0.7 * (parseInt(feature.id, 16) / 1000000 % 1), // jshint ignore:line
-#                               1
-#                           ];
-#                       } else {
-#                           if( feature.scale_rank == 6 ) {
-#                               return [1.,0.,0.,1];
-#                           } else if( feature.scale_rank == 5 ) {
-#                               return [0.,1.,0.,1];
-#                           } else if( feature.scale_rank == 4 ) {
-#                               return [0.,0.,1.,1];
-#                           } else if( feature.scale_rank == 3 ) {
-#                               return [0.,0.,0.5,1];
-#                           } else if( feature.scale_rank == 2 ) {
-#                               return [0.,0.5,0.,1];
-#                           } else if( feature.scale_rank == 1 ) {
-#                               return [0.,0.5,0.,1];
-#                           } else if( feature.scale_rank == 0 ) {
-#                               return [0.5,0.,0.,1];
-#                           } else {
-#                               return [0.5,0.5,0.5,1];
-#                           }
-#                       }
-#                   }
             lines:
                 order: global.feature_order
 
@@ -5415,440 +4203,6 @@ layers:
                         style: italic
                         size: 11px
                         stroke: { color: global.text_stroke_address, width: 1 }
-
-        #TIER 1
-        national_park:
-            filter:
-                all:
-                    - kind: [national_park, battlefield, protected_area]
-                any:
-                    - not: { operator: [ "United States Forest Service" ] }
-                    - protect_class: ['2','3','5']
-            draw:
-                dots:
-                    color: [[4,[0.655,0.800,0.796]],[8,[0.588,0.780,0.773]]]
-                    # todo: what is this?
-                    order: 18
-                    visible: true
-            us_national_park:
-                # yosemite national park, death valley national park, grand canyon national park
-                filter:
-                    any:
-                        - operator: [ "United States National Park Service" ]
-                        - protect_class: ['2','3','5']
-                draw:
-                    dots:
-                        color: [[4,[0.525,0.765,0.686]],[9,[0.416,0.737,0.631]]]
-                        order: 19
-                        visible: true
-                        # color: [[4,[0.242,0.737,0.712]],[12,[0.224,0.682,0.659]]]
-        #TIER 2
-        conservation:
-            filter:
-                all:
-                    - $zoom: { min: 4 }
-                    - kind: [protected_area, nature_reserve, national_park]
-                    - not: { protect_class: ['2','3','5'] }
-            draw:
-                dots:
-                    # effectively the wilderness color
-                    color: [[0,[0.442,0.960,0.865]],[11,[0.2,0.850,0.765]]] #red #[0.420,0.808,0.698]
-                    visible: true
-                    order: 33
-        national_forest_level_6:
-            filter:
-                all:
-                    - kind: forest
-                any:
-                    - protect_class: ['6']
-                    - operator: ['United States Forest Service']
-            draw:
-                dots:
-                    color: [0.442,0.960,0.865] #*green7
-                    visible: true
-
-        # gotta be a protected area to draw green, not just a landcover type
-        farm:
-            filter:
-                kind: [farm, farmland]
-                $zoom: { min: 10}
-            draw:
-                dots:
-                    color: [0.600,0.790,0.714]
-                    visible: global.green4_v
-        forest-landcover:
-            filter: { kind: [forest, natural_forest, wood, natural_wood, natural_park], $zoom: { min: 10 }, not: { operator: "United States Forest Service" } }
-            draw:
-                dots:
-                    color: [0.70,0.990,0.92] #[0.486,0.839,0.722]
-                    visible: true
-
-        parks-and-national-forests-not-national-park:
-            filter:
-                all:
-                    - $zoom: { min: 4 }
-                    - kind: [park, national_park]
-                any:
-                    - not: { operator: [ "United States National Park Service", "United States Forest Service" ] }
-                    - not: { protect_class: ['2','3','5','6'] }
-            # default for national forests and more?
-            draw:
-                dots:
-                    # color: [[4,[0.655,0.800,0.796]],[11,[0.588,0.780,0.773]],[12,[0.242,0.737,0.712]],[14,[0.412,0.733,0.718]],[15,[0.635,0.792,0.788]]]
-                    color: [[4,[0.655,0.800,0.796]],[11,[0.588,0.780,0.773]],[12,[0.635,0.792,0.788]]]
-                    visible: true
-            national_park:
-                #filter: function() { return feature.name && (feature.name.indexOf('National Park') > -1); }
-                filter:
-                    all:
-                        - kind: national_park
-                        - not: [ protect_class: ['2','3','5','6'], operator: [ "United States National Park Service"] ]
-                draw:
-                    dots:
-                        color: [[4,[0.525,0.765,0.686]],[9,[0.416,0.737,0.631]]]
-        urban:
-            filter: { kind: [urban, rural, residential] }
-            visible: global.earth2_v
-            draw:
-                dots:
-                    color: [[0, global.earth2],[9, global.earth2]]
-                    visible: global.earth2_v
-        #TIER 3
-        airport:
-            filter:
-                kind: aerodrome
-            draw:
-                dots:
-                    color: [0.805,0.805,0.825]
-                    visible: true
-        military:
-            filter:
-                kind: military
-            draw:
-                dots:
-                    color: [0.722,0.769,0.827]
-                    visible: true
-        university:
-            filter:
-                kind: [university, college]
-            draw:
-                dots:
-                    color: [0.827,0.753,0.682]
-                    visible: true
-        #TIER 4
-        cemetery:
-            filter:
-                kind: cemetery
-            draw:
-                dots:
-                    color: global.green2
-                    visible: true
-        commercial:
-            filter:
-                kind: commercial
-            draw:
-                dots:
-                    color: [0.855,0.748,0.667]
-                    visible: global.grey1_v
-        golf_course:
-            filter:
-                kind: golf_course
-            draw:
-                dots:
-                    color: [0.353,0.812,0.545]
-                    visible: true
-        hospital:
-            filter:
-                kind: hospital
-            draw:
-                dots:
-                    color: [0.843,0.624,0.647]
-                    visible: true
-        industrial:
-            filter:
-                kind: industrial
-            draw:
-                dots-rev:
-                    color: [[8,[0.845,0.845,0.845]],[14,[0.835,0.835,0.835]],[15,[0.780,0.780,0.780]]]
-                    visible: true
-        power:
-            filter: { kind: [plant, generator, substation] }
-            draw:
-                dots:
-                    color: [0.679,0.679,0.679]
-                    visible: true
-        railway:
-            filter:
-                kind: railway
-            draw:
-                dots-rev:
-                    color: [0.898,0.910,0.918]
-                    visible: true
-        sports_centre:
-            filter:
-                kind: sports_centre
-            draw:
-                dots:
-                    color: global.green10
-        recreation_ground:
-            filter:
-                kind: recreation_ground
-            draw:
-                dots:
-                    color: global.green1
-                    visible: true
-        retail:
-            filter:
-                kind: retail
-            draw:
-                dots:
-                    color: [0.955,0.752,0.650]
-                    visible: global.grey1_v
-        stadium:
-            filter:
-                kind: stadium
-            draw:
-                dots:
-                    color: [0.624,0.690,0.761]
-                    visible: true
-        zoo:
-            filter:
-                kind: [zoo, wildlife_park]
-            draw:
-                dots:
-                    color: [0.498,1.000,0.851]
-                    visible: true
-        winter_sports:
-            filter:
-                kind: winter_sports
-            draw:
-                dots:
-                    color: global.grey8
-                    visible: global.grey8_v
-        man-made:
-            filter: { kind: [pier,wastewater_plant,works,bridge,tower,breakwater,water_works,groyne,dike,cutline] }
-            draw:
-                dots:
-                    color: [0.690,0.690,0.690]
-                    visible: true
-            pier:
-                filter: { kind: [pier,bridge,breakwater,groyne,dike,cutline] }
-                draw:
-                    dots:
-                        color: [0.679,0.679,0.679]
-                        visible: true
-        #TIER 5
-        tourism-related:
-            filter:
-                kind:
-                    - theme_park
-                    - resort
-                    - aquarium
-                    - winery
-                    - maze
-            draw:
-                dots:
-                    color: global.grey10
-                    visible: true
-        beach:
-           filter:
-               kind: beach
-           draw:
-               dots:
-                   color: [0.780,0.740,0.538]
-                   visible: true
-        #TIER 6
-        garden:
-            filter:
-                kind: [garden, allotments]
-            draw:
-                dots:
-                    color: [0.604,0.973,0.722]
-                    visible: true
-        parking:
-            filter:
-                all:
-                    - kind: parking
-                    - $zoom: { min: 14 }
-                any:
-                    - { $zoom: { min: 14 }, area: { min: 10000 } }
-                    - { $zoom: { min: 15 }, area: { min: 5000 } }
-            draw:
-                dots:
-                    color: [0.765,0.765,0.765]
-                    visible: global.grey1_v
-            early:
-                filter: { $zoom: { max: 15 } }
-                draw:
-                    dots:
-                        color: global.grey1_e
-                        visible: true
-        pedestrian:
-            filter:
-                kind: [pedestrian,common,footway]
-            draw:
-                dots:
-                    color: [0.740,0.740,0.740]
-                    visible: global.grey1_v
-            green-stuff:
-                filter:
-                    surface: [grass]
-                draw:
-                    dots:
-                        color: [0.584,0.843,0.792]
-        # glacier:
-        #     filter:
-        #         kind: glacier
-        #     draw:
-        #         terrain:
-        #             color: [0.890,0.970,1.000]
-        #             # color: [0.975,0.975,0.828]
-        #             visible: true
-
-        pitch:
-            filter: { kind: pitch }
-            draw:
-                dots:
-                    color: [0.490,0.812,0.631]
-                    visible: true
-        place_of_worship:
-            filter:
-                kind: place_of_worship
-            draw:
-                dots:
-                    color: [0.910,0.972,1.000]
-                    visible: global.grey1_v
-        playground:
-            filter:
-                kind: playground
-            draw:
-                dots-rev:
-                    color: [0.584,0.843,0.792]
-                    visible: true
-        school:
-            filter:
-                kind: school
-            draw:
-                dots:
-                    color: [0.749,0.722,0.694]
-                    visible: true
-
-        minor-landuse:
-            filter:
-                kind:
-                    - attraction
-                    - artwork
-                    - wilderness_hut
-                    - hanami
-            draw:
-                dots:
-                    color: [0.765,0.765,0.765]
-                    visible: true
-
-        # GO MELLOW
-        # 18/41.19776/-8.68722
-        tree_row:
-            filter:
-                kind: tree_row
-            draw:
-                lines:
-                    order: 501 # function() { return feature.sort_rank; }
-                    color: [0.602,0.860,0.722]
-                    width: [[16,1px],[17,2px],[19,1.5m]]
-
-        # GO MELLOW
-        # 20/37.76779/-122.40096
-        hedge:
-            filter:
-                kind: hedge
-            draw:
-                lines:
-                    order: 500 # function() { return feature.sort_rank; }
-                    color: [0.602,0.860,0.722]
-                    width: [[16,0.5px],[17,1px],[19,1m]]
-
-        landuse-not-filtered:
-            # runways and taxiways are also in the roads layer as lines
-            # these ones are probably duplicate features, but have AREA (a good thing)
-            filter:
-                kind:
-                    - runway
-                    - apron
-                    - beach
-                    - roller_coaster
-                    - amusement_ride
-                    - summer_toboggan
-                    - trail_riding_station
-                    - water_slide
-                    - carousel
-                    - animal
-                    - enclosure
-                    - petting_zoo
-                    - aviary
-            draw:
-                dots:
-                    order: global.feature_order
-                    visible: false
-                dots-rev:
-                    order: global.feature_order
-                    visible: false
-                polygons:
-                    visible: false
-                    order: global.feature_order
-            runway:
-                filter:
-                    kind: runway
-                draw:
-                    polygons:
-                        visible: true
-                        color: [[10,[0.4,0.4,0.4]],[11,[0.50,0.50,0.50]],[12,[0.7,0.7,0.7]],[13,[0.75,0.75,0.75]],[14,[0.95,0.95,0.95]]]
-                early:
-                    filter: { $zoom: [9] }
-                    draw:
-                        polygons:
-                            visible: false
-            apron:
-                filter:
-                    kind: apron
-                    $zoom: { min: 15}
-                draw:
-                    dots-rev:
-                        visible: true
-                        color: [0.820,0.820,0.820]
-            minor-amusement-park-landuse:
-                filter:
-                    kind:
-                        - roller_coaster
-                        - amusement_ride
-                        - summer_toboggan
-                        - trail_riding_station
-                        - water_slide
-                        - carousel
-                draw:
-                    dots:
-                        color: global.grey12
-                        visible: true
-            minor-zoo-landuse:
-                filter:
-                    kind:
-                        - animal
-                        - enclosure
-                        - petting_zoo
-                        - aviary
-                draw:
-                    dots:
-                        color: global.green11
-                        visible: true
-
-        landuse_urban_area-early:
-            filter:
-                # This is from Natural Earth and only shows up from zoom(0,9)
-                kind: urban_area
-            draw:
-                dots:
-                    visible: global.earth2_ev
-                    order: global.feature_order
-                    color: [[4,[0.965,0.600,0.882]],[6,[0.965,0.600,0.882]],[7,[0.882,0.639,0.827]],[8,[0.757,0.729,0.753]]]
 
         city_walls:
             filter: { kind: city_wall }
@@ -5999,7 +4353,7 @@ layers:
                         anchor: center
                         text_source: function() { if( feature.ref.length < 6 ) { return feature.ref; } else { return ''; } }
                         font:
-                            family: Montserrat
+                            family: global.text_font_family
                             fill: function() { if(feature.colour == 'yellow') { return '#555'; } else { return 'white'; } }
                             weight: 700
                             size: [[7,7px],[12,8px],[16,11px]]
@@ -6061,21 +4415,6 @@ layers:
                             style: italic
                             stroke: { color: white, width: 3px }
 
-#    transit-bus-roads:
-#        data: { source: mapzen, layer: roads }
-#        filter: { is_bus_route: true }
-#        draw:
-#            lines:
-#                visible: global.sdk_transit_overlay
-#                interactive: false
-#                color: [[13,[0,0,1,0.5]],[15,blue]]
-#                width: [[11,0.5px],[12,0.8px],[16,1.25px],[18,1m]]
-#                # let roads sort themselves past zoom 14
-#                order: 488
-#                # but give them all the same outline
-#                outline:
-#                    order: 487
-
     transit-overlay-station-labels:
         data: { source: mapzen, layer: pois }
         filter:
@@ -6117,179 +4456,3 @@ layers:
         poi_labels-z20-up:
             filter: { $zoom: { min: 20 } }
             draw: { mapzen_icon_library: { text: { font: { size: 14px, weight: 600, stroke: { width: 3 }  } } } }
-        station-train-subway:
-            filter: { kind: [station, train-station, train_station] } #, $zoom: { min: 13 }
-            draw:
-                mapzen_icon_library:
-                    sprite: train_station
-                    size: [[13, 12px], [14, 14px], [15, 16px], [17, 20px]]
-                    priority: 11
-                    text:
-                        #offset: [[13, [0, 6px]], [14, [0, 7px]],[15, [0, 8px]], [17, [0, 10px]]]
-                        priority: 12
-            low-priority-early:
-                filter: { kind_tile_rank: { min: 3 }, $zoom: { min: 0, max: 12 } }
-                draw:
-                    mapzen_icon_library:
-                        size: [[12, 5px], [14, 6px], [15, 16px]]
-                        text:
-                            visible: false
-                long-tail:
-                    filter: { kind_tile_rank: { min: 10 }, $zoom: [10] }
-                    draw:
-                        mapzen_icon_library:
-                            visible: false
-            low-priority-early-z12:
-                filter: { kind_tile_rank: { min: 8 }, $zoom: [12] }
-                draw:
-                    mapzen_icon_library:
-#                        visible: false
-                        size: [[12, 5px], [14, 6px], [15, 16px]]
-                        text:
-                            visible: false
-            low-priority-early-z13:
-                filter: { kind_tile_rank: { min: 8 }, $zoom: [13] }
-                draw:
-                    mapzen_icon_library:
-                        #visible: false
-                        size: [[12, 8px], [14, 6px], [15, 16px]]
-                        text:
-                            visible: false
-            low-priority-early-z14:
-                filter: { kind_tile_rank: { min: 7 }, $zoom: [14] }
-                draw:
-                    mapzen_icon_library:
-                        size: [[12, 10px], [14, 11px], [15, 16px]]
-                        #visible: false
-                        text:
-                            visible: false
-            late:
-                filter: { $zoom: { min: 16 } }
-                draw:
-                    mapzen_icon_library:
-                        text:
-                            font:
-                                weight: 600
-                                size: 12px
-        subway-early:
-            filter: { is_subway: true, is_train: false, $zoom: { max: 12 } }
-            draw:
-                mapzen_icon_library:
-                    visible: false
-                    text:
-                        visible: false
-        halt-early:
-            filter: { kind: [halt,stop], $zoom: { max: 15 } }
-            draw:
-                mapzen_icon_library:
-                    size: [[15, 8px], [16, 18px]]
-                    visible: global.sdk_transit_overlay
-                    sprite: light_rail
-                    text:
-                        visible: false
-        platform-early:
-            filter: { kind: [platform] }
-            draw:
-                mapzen_icon_library:
-                    size: [[15, 8px], [16, 18px]]
-                    visible: global.sdk_transit_overlay
-                    sprite: generic
-                    text:
-                        visible: false
-        tram-stop-early:
-            filter: { kind: [tram_stop], $zoom: { max: 16 } }
-            draw:
-                mapzen_icon_library:
-                    size: [[13, 0px], [14, 7px], [15, 8px]]
-                    visible: global.sdk_transit_overlay
-                    sprite: light_rail
-                    text:
-                        visible: false
-        tram-stop:
-            filter: { kind: tram_stop, $zoom: { min: 16 } }
-            draw:
-                mapzen_icon_library:
-                    size: [[16, 12px], [17, 14px], [18, 18px]]
-                    sprite: light_rail
-                    #text:
-                        #offset: [[13, [0, 6px]], [16, [0, 9px]]]
-        bus-like-labels:
-            filter:
-                kind: [platform, stop_position]
-            draw:
-                mapzen_icon_library:
-                    size: [[13, 8px], [16, 10px], [17, 12px], [18, 18px]]
-                    sprite: bus_station
-                    text:
-                        interactive: global.sdk_interactive
-                        font:
-                            fill: black
-                            size: 12px
-                            stroke: { color: white, width: 4 }
-        bus-station-labels:
-            filter:
-                kind: [bus_station, bus_stop]
-                $zoom: { min: 16 }
-            draw:
-                mapzen_icon_library:
-                    size: [[13, 12px], [16, 18px]]
-                    sprite: bus_station
-                    priority: 17
-                    text:
-                        interactive: global.sdk_interactive
-                        priority: 18
-                        font:
-                            fill: black
-                            size: 12px
-                            stroke: { color: white, width: 4 }
-            bus_stop:
-                filter:
-                    kind: [bus_stop]
-                    $zoom: { max: 19 }
-                draw:
-                    mapzen_icon_library:
-                        size: [[13, 8px], [19, 18px]]
-                        text:
-                            visible: false
-        subway-entrance:
-            filter:
-                kind: [subway_entrance]
-            draw:
-                mapzen_icon_library:
-                    sprite: subway_entrance
-                    size: [[17, 12px], [19, 14px]]
-                    priority: 19
-                    text:
-                        #offset: [[17, [0, 6px]], [19, [0, 7px]]] # offset tracks alongside icon size (half icon height)
-                        priority: 20
-                        interactive: global.sdk_interactive
-                        text_source: function() { if( feature.ref || feature.name ) { if( feature.ref && feature.name ) { return '[' + feature.ref + ']\n' + feature.name; } else { return feature.name; } } else { return "Entrance"; } }
-                        font:
-                            fill: black
-                            size: 12px
-                            stroke: { color: white, width: 4 }
-
-#    transit-platforms:
-#        data: { source: mapzen, layer: transit }
-#        filter: { kind: platform, $zoom: { min: 15 }, $geometry: [polygon,line] }
-#        draw:
-#            lines:
-#                visible: global.sdk_transit_overlay
-#                color: '#bc8f96'
-#                width: 10m          # something fishy here with the #include syntax in v0.7 tangram?
-#                order: 1000         # this selection should sort above basemap, but grey Zinc color still applies
-#                outline:
-#                    order: 1002
-#            polygons:
-#                visible: global.sdk_transit_overlay
-#                order: 1001
-#        polygon_geom:
-#            filter: { $geometry: polygon }
-#            draw:
-#                polygons:
-#                    color: '#bc8f96'
-#                    outline:
-#                        color: '#bc8f96'
-#                        width: [[15,0px],[16,0.5px],[17,1px],[19,2px]]
-#                lines:
-#                    visible: false

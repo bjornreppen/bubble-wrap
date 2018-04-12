@@ -1,14 +1,14 @@
 all: dist
 
 dist:
-	tangram-bundle bubble-wrap-style.yaml
-	mv bubble-wrap-style.zip dist/bubble-wrap-style.zip
+	tangram-bundle cawl-style.yaml
+	mv cawl-style.zip dist/cawl-style.zip
 
-	tangram-bundle bubble-wrap-style-more-labels.yaml
-	mv bubble-wrap-style-more-labels.zip dist/bubble-wrap-style-more-labels.zip
+	tangram-bundle cawl-style-more-labels.yaml
+	mv cawl-style-more-labels.zip dist/cawl-style-more-labels.zip
 
-	tangram-bundle bubble-wrap-style-no-labels.yaml
-	mv bubble-wrap-style-no-labels.zip dist/bubble-wrap-style-no-labels.zip
+	tangram-bundle cawl-style-no-labels.yaml
+	mv cawl-style-no-labels.zip dist/cawl-style-no-labels.zip
 
 clean:
 	rm -rf dist
