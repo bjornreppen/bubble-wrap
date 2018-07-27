@@ -197,7 +197,7 @@ global:
     sdk_interactive: true
     #
     # default order for basemap features
-    feature_order: function() { return feature.sort_rank; }
+    feature_order: 255 # function() { return feature.sort_rank; }
     #
     #
     #label styling
